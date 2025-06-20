@@ -5,14 +5,12 @@ spring:
   application:
     name: notification-service
 
-# Kafka example config (adjust if using RabbitMQ)
-  kafka:
-    bootstrap-servers: kafka:9092
-    consumer:
-      group-id: notification-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    queue: order.queue
 
 eureka:
   client:

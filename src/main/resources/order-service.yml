@@ -4,9 +4,14 @@ server:
 spring:
   application:
     name: order-service
-
+  rabbitmq:
+    host: localhost  # or rabbitmq (if running via Docker Compose)
+    port: 5672
+    username: guest
+    password: guest
+    queue: order.queue
   datasource:
-    url: jdbc:postgresql://auth-db:5432/orderdb
+    url: jdbc:postgresql://order-db:5432/orderdb
     username: postgres
     password: password
 
