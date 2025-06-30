@@ -4,7 +4,8 @@ server:
 spring:
   application:
     name: api-gateway
-
+  config:
+    import: "optional:configserver:http://config-server:8888,optional:common.yml"
   cloud:
     gateway:
       discovery:
@@ -17,5 +18,3 @@ spring:
           predicates:
             - Path=/orders/**
         # future auth-service route can be added here
-
-

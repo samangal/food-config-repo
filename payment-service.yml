@@ -1,0 +1,18 @@
+rabbitmq:
+  host: localhost # or rabbitmq (if running via Docker Compose)
+  port: 5672
+  username: guest
+  password: guest
+
+  order:
+    queue: order.queue
+    exchange: order.exchange
+    routing-key: order.created.key
+  payment:
+    exchange: payment.exchange
+    routing-key: payment.processed.key
+    queue: payment.processed.queue
+  payment_failed:
+    exchange: payment.exchange
+    routing-key: payment.failed.processed.key
+    queue: payment.failed.queue
